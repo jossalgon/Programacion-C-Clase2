@@ -30,7 +30,7 @@ void curso_concesionario_free(struct concesionario *con)
 void curso_concesionario_attr_unset_coche(struct concesionario *con,
 					  uint32_t pos)
 {
-	if (pos > 0 && pos > con->num_coches)
+	if (pos < 0 || pos > con->num_coches)
 		return;
 
 	con->num_coches--;
@@ -107,7 +107,7 @@ const char *curso_concesionario_attr_get_str(struct concesionario *con,
 }
 
 struct coche *curso_concesionario_attr_get_coche(struct concesionario *con,
-					         uint16_t attr, uint32_t pos)
+						 uint16_t attr, uint32_t pos)
 {
 	return (struct coche *)curso_concesionario_attr_get_data(con, attr,
 								 pos);

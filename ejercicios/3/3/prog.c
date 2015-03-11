@@ -5,9 +5,9 @@
 
 int main(int argc, char **argv)
 {
-	char buf[5];
+	char buf[50];
 
-	snprintf(buf, 50, "Que tipo de error de memoria soy");
+	snprintf(buf, sizeof(buf), "Que tipo de error de memoria soy");
 	printf("%s\n", buf);
 
 	return 1;
