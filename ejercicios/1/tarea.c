@@ -61,9 +61,8 @@ void tarea_attr_unset(struct tarea *t, uint16_t attr)
 		break;
 	case TAREA_ATTR_ID:
 		break;
-
-		t->flags &= ~(1 << attr);
 	}
+	t->flags &= ~(1 << attr);
 }
 
 void tarea_attr_set_data(struct tarea *t, uint16_t attr, const void *data,
