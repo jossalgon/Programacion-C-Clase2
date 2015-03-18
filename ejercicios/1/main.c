@@ -1,13 +1,6 @@
 #include "tarea.h"
 #include <assert.h>
 
-/***********************************************************\
-* *
-* NO SE HA REALIZADO LA LIBERACIÓN COMPLETA DE LOS STRUCTS
-* USAR BAJO SU PROPIA RESPONSABILIDAD
-* *
-\***********************************************************/
-
 static int test1(void)
 {
 	printf("\n### TEST 1 ALLOC ###\n");
