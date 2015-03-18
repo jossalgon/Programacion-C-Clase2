@@ -10,13 +10,13 @@
 
 static int test1(void)
 {
-	printf("\n### TEST ALLOC ###\n");
+	printf("\n### TEST 1 ALLOC ###\n");
 	struct tarea *t1;
 	t1 = tarea_alloc();
 	printf("La dirección de t1 después del alloc es %p\n", t1);
 	assert(t1 != NULL);
 
-	printf("\n### TEST FREE ###\n");
+	printf("\n### TEST 1 FREE ###\n");
 	tarea_free(t1);
 	printf("La dirección de t1 después del free es %p\n", t1);
 	// assert(t == NULL);
@@ -25,7 +25,7 @@ static int test1(void)
 
 static int test2(void)
 {
-	printf("\n### TEST IS SET ###\n");
+	printf("\n### TEST 2 IS SET ###\n");
 	struct tarea *t2;
 	t2 = tarea_alloc();
 
@@ -51,13 +51,13 @@ static int test2(void)
 	assert(b5 == false);
 	printf(b5 ? "prioridad está activo\n" : "prioridad no está activo\n");
 
-	// tarea_free(t2);
+	tarea_free(t2);
 	return 0;
 }
 
 static int test3(void)
 {
-	printf("\n### TEST SET + GET ###\n");
+	printf("\n### TEST 3 SET + GET ###\n");
 	struct tarea *t3;
 	t3 = tarea_alloc();
 
@@ -90,7 +90,7 @@ static int test3(void)
 	printf("El id de la tarea es: %d\n",
 		tarea_attr_get_u32(t3, TAREA_ATTR_ID));
 
-	// tarea_free(t3);
+	tarea_free(t3);
 	return 0;
 }
 
@@ -125,8 +125,8 @@ static int test4(void)
 
 int main(void)
 {
-	test1();
-	test2();
+	// test1();
+	// test2();
 	test3();
 	test4();
 

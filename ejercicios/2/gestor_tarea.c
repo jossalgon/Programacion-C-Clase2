@@ -26,7 +26,9 @@ int binsearch(struct tarea *t[], int size, struct tarea *key)
 
 struct gestor_tarea *gestor_tarea_alloc(void)
 {
-	return (struct gestor_tarea *)malloc(sizeof(struct gestor_tarea));
+	struct gestor_tarea *g = malloc(sizeof(struct gestor_tarea));
+	memset(g, 0, (sizeof(struct gestor_tarea)));
+	return g;
 }
 
 void gestor_tarea_free(struct gestor_tarea *g)

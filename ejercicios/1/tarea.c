@@ -13,7 +13,10 @@ struct tarea {
 
 struct tarea *tarea_alloc(void)
 {
-	return (struct tarea *)malloc(sizeof(struct tarea));
+	struct tarea *t = malloc(sizeof(struct tarea));
+	memset(t, 0, (sizeof(struct tarea)));
+	return t;
+
 }
 
 void tarea_free(struct tarea *t)

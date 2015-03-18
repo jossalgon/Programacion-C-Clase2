@@ -11,7 +11,9 @@ struct concesionario {
 
 struct concesionario *curso_concesionario_alloc(void)
 {
-	return (struct concesionario *)malloc(sizeof(struct concesionario));
+	struct concesionario *con = malloc(sizeof(struct concesionario));
+	memset(con, 0, (sizeof(struct concesionario)));
+	return con;
 }
 
 void curso_concesionario_free(struct concesionario *con)

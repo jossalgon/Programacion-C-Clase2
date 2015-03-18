@@ -13,7 +13,7 @@ enum {
 };
 
 #define TAREA_ATTR_MAX (__TAREA_ATTR_MAX - 1)
-#define xfree(ptr)	free((void *)ptr)
+#define xfree(ptr)	free((void *)ptr);
 
 struct tarea;
 

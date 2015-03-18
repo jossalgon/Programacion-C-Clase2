@@ -1,13 +1,6 @@
 #include "gestor_tarea.h"
 #include <assert.h>
 
-/***********************************************************\
-* *
-* NO SE HA REALIZADO LA LIBERACIÓN COMPLETA DE LOS STRUCTS
-* USAR BAJO SU PROPIA RESPONSABILIDAD
-* *
-\***********************************************************/
-
 static int test1(void)
 {
 	printf("\n### TEST ALLOC ###\n");
@@ -43,7 +36,7 @@ static int test2(void)
 	assert(b == true);
 	printf(b ? "tareas está activo\n" : "tareas no está activo\n");
 
-	// gestor_tarea_free(g2);
+	gestor_tarea_free(g2);
 	return 0;
 }
 
@@ -94,7 +87,7 @@ static int test3(void)
 		(gestor_tarea_attr_get_tarea(g3, 2) == t1)) ?
 	"Las tareas están ordenadas\n" : "Las tareas no están ordenadas\n");
 
-	// gestor_tarea_free(g3);
+	gestor_tarea_free(g3);
 	return 0;
 }
 
